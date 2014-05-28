@@ -26,7 +26,6 @@ describe User do
   end
 
   it 'Accepts password that starts with a number' do
-    pending
     user = User.new(
       email: 'user1@example.com',
       password: '1password',
@@ -45,7 +44,6 @@ describe User do
   end
 
   it 'Creates user with password confirmation' do
-    pending
     user = User.new(
       email: 'user1@example.com',
       password: '1password',
@@ -55,7 +53,6 @@ describe User do
   end
 
   it 'Requires a password confirmation' do
-    pending
     user = User.new(
       email: 'user1@example.com',
       password: '1password',
