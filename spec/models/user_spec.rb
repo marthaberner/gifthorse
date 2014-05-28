@@ -10,7 +10,6 @@ describe User do
   end
 
   it 'Email cannot be blank' do
-    pending
     user = User.new(
       email: '',
       password: 'password1'
@@ -19,7 +18,6 @@ describe User do
   end
 
   it 'Password must be valid' do
-    pending
     user = User.new(
       email: 'user1@example.com',
       password: 'password'
@@ -37,8 +35,7 @@ describe User do
     expect(user.valid?).to eq true
   end
 
-  it 'Password must be at least 6 characters' do
-    pending
+  it 'Password must be between 6 and 9 characters and have one number' do
     user = User.new(
       email: 'user1@example.com',
       password: '1pass',
