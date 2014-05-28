@@ -7,12 +7,12 @@ class UsersController < ApplicationController
       session[:id] = @user.id
       redirect_to user_path(@user.id)
     else
-      render :new
+      render :new, notice: 'Email is invalid'
     end
   end
 
   def show
-   @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def user_params
