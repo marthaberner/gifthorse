@@ -1,28 +1,35 @@
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <ul class="errors">
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
+<div class="container">
+  <div class="create-with-errors">
+    <h2>Create An Account</h2>
+    <%= form_for @user do |f| %>
 
-  <p>
-    <%= f.label :email, class: "form-label" %>
-    <%= f.text_field :email %>
-  </p>
+      <p>
+        <%= f.label :email, class: "form-label" %>
+        <%= f.text_field :email, autofocus: true %>
+      </p>
 
-  <p>
-    <%= f.label :password, class: "form-label" %>
-    <%= f.password_field :password %>
-  </p>
+      <p>
+        <%= f.label :password, class: "form-label" %>
+        <%= f.password_field :password %>
+      </p>
 
-  <p>
-    <%= f.label :user_confirmation, class: "form-label" %>
-    <%= f.password_field :password_confirmation %>
-  </p>
+      <p>
+        <%= f.label :password_confirmation, class: "form-label" %>
+        <%= f.password_field :password_confirmation %>
+      </p>
 
-  <p>
-    <%= f.submit "Create Account", class: "submit-button" %>
-  </p>
-<% end %>
+      <p>
+        <%= f.submit "Create Account", class: "create-button-errors" %>
+      </p>
+    <% end %>
+  </div>
+  <div class="errors" >
+    <% if @user.errors.any? %>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>

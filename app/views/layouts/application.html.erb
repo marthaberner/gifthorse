@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gifthorse2</title>
+  <title>The GiftHorse</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<main>
-<div class="flash_notice">
-  <%= flash[:notice] %>
+<div class="page-container">
+  <header>
+    <h1><span>GiftHorse</span></h1>
+  </header>
+  <main>
+    <%= yield %>
+  </main>
 </div>
-<%= yield %>
-</main>
 </body>
 </html>
