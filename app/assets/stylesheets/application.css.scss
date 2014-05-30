@@ -46,7 +46,7 @@ h1 {
   font-size: 81px;
   font-weight: 800;
   color: #00374F;
-  padding-top: 90px;
+  padding-top: 60px;
   margin-top: 0px;
   position: relative;
   text-align: center;
@@ -58,7 +58,7 @@ h1:before {
   content: "";
   margin: 0 auto; /* this centers the line to the full width specified */
   position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
-  top: 100px;
+  top: 70px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -129,9 +129,15 @@ p {
   font-family: 'Open Sans', Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 50px;
+  color: #00374F;
+}
+
 .page-container {
   background-color: #FAF3E6;
-  height: 800px;
   border-radius: 55px;
   overflow: hidden;
 }
@@ -240,7 +246,7 @@ p {
   width: 40%;
   float: right;
   margin-right: 32px;
-  margin-top: -34px;
+  margin-top: -184px;
 }
 
 .forgot-password {
@@ -392,7 +398,9 @@ p {
 
 .logout-link a {
   color: #00374F;
-  margin-left: 850px;
+  float: right;
+  margin-right: 100px;
+  margin-bottom: 30px;
 }
 
 .just-added {
