@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
   def create
-    @user = User.find_by(email: params[:email])
-    if @user.present? && @user.authenticate(params[:password])
+    @user = User.find_by(email: params[:session][:email])
+    if @user && @user.authenticate(params[:session][:password])
       session[:id] = @user.id
       redirect_to user_path(@user.id)
     else
@@ -10,8 +10,12 @@ class SessionsController < ApplicationController
     end
   end
 
+  def new
+
+  end
+
   def destroy
-    session.clear
+    session[:id] = nil
 
     redirect_to root_path, notice: 'Logout successful.'
   end

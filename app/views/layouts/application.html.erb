@@ -20,7 +20,7 @@
     <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://localhost:3000/assets/bookmark.js';})();">GiftHorseIt</a>
 
     <% if logged_in? %>
-      <li class="logout-link"><%= link_to 'Logout', session_path, method: :delete %></li>
+      <li class="logout-link"><%= link_to 'Logout', logout_path, method: :delete %></li>
     <% end %>
     <%= flash[:notice] %>
     <%= flash[:alert] %>

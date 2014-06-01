@@ -22,7 +22,7 @@
       </div>
     <% end %>
 
-    <%= form_for :user, url: sessions_path do |f| %>
+    <%= form_for :session, url: sessions_path do |f| %>
       <p>
         <%= f.label :email, class: "form-label" %>
         <%= f.text_field :email %>
