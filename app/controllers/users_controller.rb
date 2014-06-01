@@ -4,6 +4,10 @@ class UsersController < ApplicationController
 
   end
 
+  def new
+    @user = User.new
+  end
+
   def create
     @user = User.create(user_params)
 
@@ -11,12 +15,20 @@ class UsersController < ApplicationController
       session[:id] = @user.id
       redirect_to user_path(@user.id)
     else
-      render :new, notice: 'Email is invalid'
+      render :new
     end
   end
 
   def show
+    @bookmarks = Bookmark.all
     @user = User.find(params[:id])
+    session[:id] = @user.id
+  end
+
+  def destroy
+    session.clear
+
+    redirect_to root_path, notice: 'Logout successful.'
   end
 
   def user_params

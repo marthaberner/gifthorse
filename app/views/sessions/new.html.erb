@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="create-with-errors">
+    <h3>Login</h3>
+
+    <%= form_for :user, url: sessions_path do |f| %>
+      <p>
+        <%= f.label :email, class: "form-label" %>
+        <%= f.text_field :email %>
+      </p>
+
+      <p>
+        <%= f.label :password, class: "form-label" %>
+        <%= f.password_field :password %>
+      </p>
+
+      <p>
+        <%= f.submit "Login", class: "login-button-too" %>
+      </p>
+    <% end %>
+  </div>
+</div>

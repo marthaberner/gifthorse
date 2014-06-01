@@ -7,13 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<script>
+  var id = <%= session[:id] %>;
+</script>
+
 <div class="page-container">
   <header>
     <h1><span>GiftHorse</span></h1>
   </header>
   <main>
+
+    <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://localhost:3000/assets/bookmark.js';})();">GiftHorseIt</a>
+
+    <% if logged_in? %>
+      <li class="logout-link"><%= link_to 'Logout', session_path, method: :delete %></li>
+    <% end %>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
     <%= yield %>
   </main>
+  <footer>&copy; martha berner | all rights reserved </footer>
 </div>
 </body>
 </html>

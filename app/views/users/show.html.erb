@@ -1,1 +1,14 @@
-<h3> Welcome, <%= @user.email %></h3>
+<div class="greeting">
+  <h3>Hello, <%= @user.email %></h3>
+</div>
+<div class="user-page-container">
+  <div class="list-gifts-container">
+      <% @bookmarks.each do |bookmark| %>
+        <%= bookmark.title %>
+      </div>
+      <div class="add-gifts-container">
+      <%= bookmark.url %>
+      </div>
+
+        <% end %>
+</div>

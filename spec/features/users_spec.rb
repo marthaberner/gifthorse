@@ -1,24 +1,33 @@
 require 'spec_helper'
 
 feature 'User Registratoin' do
-  scenario 'User can create an account' do
+  scenario 'User can create an account and logout' do
     visit '/'
 
+    within '.create-home' do
     fill_in 'user[email]', with: 'joe@joe.com'
     fill_in 'user[password]', with: 'password1'
     fill_in 'user[password_confirmation]', with: 'password1'
     click_on 'Create Account'
+    end
 
-    expect(page).to have_content 'Welcome, joe@joe.com'
+    expect(page).to have_content 'Hello, joe@joe.com'
+
+    click_link 'Logout'
+    expect(page).to have_content 'Logout successful.'
+    expect(page).to have_no_link 'Logout'
+
   end
 
   scenario 'User sees an error message if they register with an invalid email' do
     visit '/'
 
+    within '.create-home' do
     fill_in 'user[email]', with: 'invaliduser@example,com'
     fill_in 'user[password]', with: 'password1'
     fill_in 'user[password_confirmation]', with: 'password1'
     click_on 'Create Account'
+    end
 
     expect(current_path).to eq '/users'
     expect(page).to have_content 'Email is invalid'
@@ -27,10 +36,12 @@ feature 'User Registratoin' do
   scenario 'User sees an error if password is invalid' do
     visit '/'
 
+    within '.create-home' do
     fill_in 'user[email]', with: 'invaliduser@example.com'
     fill_in 'user[password]', with: 'password'
     fill_in 'user[password_confirmation]', with: 'password1'
     click_on 'Create Account'
+    end
 
     expect(current_path).to eq '/users'
     expect(page).to have_content 'Password must be between 6 and 9 characters and have one number.'
