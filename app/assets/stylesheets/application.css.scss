@@ -166,12 +166,12 @@ footer {
   border-radius: 25px;
   -moz-border-radius: 15px;
   background-color: #EDEFF2;
+  overflow: hidden;
 }
 
 .add-gifts-container {
   width: 45%;
-  margin-left: 518px;
-
+  float: right;
 }
 
 .add-gifts-container h3 {
