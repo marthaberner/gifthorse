@@ -1,17 +1,21 @@
 class BookmarksController < ApplicationController
+
   def create
-    @bookmark = Bookmark.create(allowed_params)
 
-    render nothing: true
+    # if they are not logged in
+    # redirect to the login page
+
+    # Later...
+    # sometime in the future.... store the title and url
+    # after login, redirect back here
+
+    Bookmark.create!(
+      title: params[:title],
+      url: params[:url],
+      user_id: session[:id]
+    )
+
+    redirect_to params[:url]
   end
 
-  def new
-
-  end
-
-  private
-
-  def allowed_params
-    params.require(:bookmark).permit(:title, :url, :user_id)
-  end
 end

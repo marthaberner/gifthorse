@@ -13,7 +13,5 @@ Rails.application.routes.draw do
 
   match '/logout', to: 'sessions#destroy',     via: 'delete'
 
-  get '/bookmarks', to: 'bookmarks#new'
-
-  post '/bookmarks', to: 'bookmarks#new'
+  get '/api/bookmarks', to: 'bookmarks#create'
 end
