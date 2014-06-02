@@ -7,15 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<script>
-</script>
-
 <div class="page-container">
   <header>
     <h1><span>GiftHorse</span></h1>
   </header>
   <main>
-
     <% if logged_in? %>
       <li class="logout-link"><%= link_to 'Logout', logout_path, method: :delete %></li>
     <% end %>

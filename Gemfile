@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.2'
   gem 'jasmine'
+  gem 'launchy', '~> 2.4.2'
   gem 'capybara', '~> 2.2.1'
   gem 'database_cleaner', '~> 1.2.0'
 end

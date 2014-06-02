@@ -10,11 +10,10 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/login',  to: 'sessions#new',         via: 'get'
-  
+
   match '/logout', to: 'sessions#destroy',     via: 'delete'
 
   get '/bookmarks', to: 'bookmarks#new'
 
   post '/bookmarks', to: 'bookmarks#new'
-
 end

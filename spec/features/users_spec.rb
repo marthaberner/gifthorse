@@ -17,6 +17,14 @@ feature 'User Registratoin' do
     expect(page).to have_content 'Logout successful.'
     expect(page).to have_no_link 'Logout'
 
+    within '.login-home' do
+    fill_in 'session[email]', with: 'joe@joe.com'
+    fill_in 'session[password]', with: 'password1'
+    click_on 'Login'
+    end
+
+    expect(page).to have_content 'Hello, joe@joe.com'
+    expect(page).to have_link 'Logout'
   end
 
   scenario 'User sees an error message if they register with an invalid email' do
