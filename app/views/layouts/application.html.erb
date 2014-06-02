@@ -9,14 +9,17 @@
 <body>
 <div class="page-container">
   <header>
-    <h1><span>GiftHorse</span></h1>
+    <h1><span><%= link_to "GiftHorse ", root_path %></span></h1>
   </header>
   <main>
     <% if logged_in? %>
       <li class="logout-link"><%= link_to 'Logout', logout_path, method: :delete %></li>
+      <li class="my-account"><%= link_to 'My Account', user_path(session[:id]) %></li>
     <% end %>
+    <div class="notice-alert">
     <%= flash[:notice] %>
     <%= flash[:alert] %>
+    </div>
     <%= yield %>
   </main>
   <footer>&copy; martha berner | all rights reserved </footer>

@@ -115,6 +115,11 @@ h3 + p {
   margin-top: 0;
 }
 
+h4 {
+  padding: 0px;
+  margin: 0px;
+}
+
 a {
   color: #2babe1;
   text-decoration: none;
@@ -140,6 +145,10 @@ footer {
   background-color: #FAF3E6;
   border-radius: 55px;
   overflow: hidden;
+}
+
+.page-container a {
+  color: #00374F;
 }
 
 .container {
@@ -172,6 +181,7 @@ footer {
 .add-gifts-container {
   width: 45%;
   float: right;
+  background-color: lightgreen;
 }
 
 .add-gifts-container h3 {
@@ -179,10 +189,9 @@ footer {
 }
 
 .list-gifts-container {
-  width: 45%;
+  width: 90%;
   float: left;
   margin-left: 25px;
-  border-right: 2px solid #CC3300;
 }
 
 .list-gifts-container h3 {
@@ -276,7 +285,7 @@ footer {
 
 .what_is {
   display: block;
-  width: 75%;
+  width: 85%;
   padding-left: 75px;
   padding-top: 0px;
   padding-bottom: 30px;
@@ -285,6 +294,10 @@ footer {
 .what_is p {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.what_is a {
+  color: #dd3b2a;
 }
 
 .flash_notice_login {
@@ -387,20 +400,29 @@ footer {
 }
 
 .greeting {
-  margin-bottom: 50px;
-  margin-left: 12px;
+  margin-bottom: 20px;
+  margin-left: 80px;
 }
 
 .greeting h3 {
+  margin-left: 100px;
+  margin-bottom: 0px;
   color: #dd3b2a;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .logout-link a {
   color: #00374F;
   float: right;
-  margin-right: 100px;
-  margin-bottom: 30px;
+  margin-right: 75px;
+}
+
+.my-account a {
+  color: #00374F;
+  float: right;
+  margin-right: 20px;
+  padding-right: 20px;
+  border-right: 1px solid #00374F;
 }
 
 .just-added {
@@ -438,17 +460,26 @@ footer {
 }
 
 table td {
-  width: 10%;
   color: #00374F;
   float: left;
   padding-right: 100px;
 }
 
-table tr th {
+table td a {
+  color: #00374F;
+}
+
+table td a:hover {
+  color: #00374F;
+}
+
+table tr{
+  width: 800px;
   color: #dd3b2a;
   float: left;
-  padding-right: 100px;
+  padding: 10px;
   margin-bottom: 10px;
+  border-bottom: 1px solid #00374F;
 }
 
 .back-link a {
@@ -467,4 +498,12 @@ table tr th {
   margin-top: 85px;
   width: 50%;
   text-align: left;
+}
+
+.notice-alert {
+  background-color: lightpink;
+  width: 90%;
+  margin-left: 50px;
+  padding-left: 10px;
+
 }
