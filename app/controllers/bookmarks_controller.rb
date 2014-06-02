@@ -18,4 +18,8 @@ class BookmarksController < ApplicationController
     redirect_to params[:url]
   end
 
+  def js
+    render 'bookmark.js'
+  end
+
 end
