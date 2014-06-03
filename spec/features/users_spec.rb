@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'User Registratoin' do
   scenario 'User can create an account and logout' do
     visit '/'
-
+     #Create an Account
     within '.create-home' do
     fill_in 'user[email]', with: 'joe@joe.com'
     fill_in 'user[password]', with: 'password1'
@@ -13,10 +13,12 @@ feature 'User Registratoin' do
 
     expect(page).to have_content 'Hello, joe@joe.com'
 
+    #Logout
     click_link 'Logout'
     expect(page).to have_content 'Logout successful.'
     expect(page).to have_no_link 'Logout'
 
+    #Login
     within '.login-home' do
     fill_in 'session[email]', with: 'joe@joe.com'
     fill_in 'session[password]', with: 'password1'
@@ -26,7 +28,7 @@ feature 'User Registratoin' do
     expect(page).to have_content 'Hello, joe@joe.com'
     expect(page).to have_link 'Logout'
   end
-
+    #Email Validation
   scenario 'User sees an error message if they register with an invalid email' do
     visit '/'
 
@@ -41,6 +43,7 @@ feature 'User Registratoin' do
     expect(page).to have_content 'Email is invalid'
   end
 
+    #Password Validation
   scenario 'User sees an error if password is invalid' do
     visit '/'
 
