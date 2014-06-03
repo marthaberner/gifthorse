@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
       session[:id] = @user.id
       redirect_to user_path(@user.id)
     else
-      render :new, notice: 'invalid email/password'
+      flash[:notice] = 'invalid email/password'
+      render :new
     end
   end
 
