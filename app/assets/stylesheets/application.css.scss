@@ -68,7 +68,7 @@ h1:before {
 
 h1 span {
   /* to hide the lines from behind the text, you have to set the background color the same as the container */
-  background-color: #FAF3E6;
+  background-color: #FFFFFF;
   padding: 0 15px;
 }
 
@@ -142,7 +142,7 @@ footer {
 }
 
 .page-container {
-  background-color: #FAF3E6;
+  background-color: #FFFFFF;
   border-radius: 55px;
   overflow: hidden;
 }
@@ -174,14 +174,13 @@ footer {
   border: 2px solid #CC3300;
   border-radius: 25px;
   -moz-border-radius: 15px;
-  background-color: #EDEFF2;
+  background-color: #F7F7F7;
   overflow: hidden;
 }
 
 .add-gifts-container {
   width: 45%;
   float: right;
-  background-color: lightgreen;
 }
 
 .add-gifts-container h3 {
@@ -220,7 +219,7 @@ footer {
   overflow: hidden;
   border: 2px solid #CC3300;
   border-radius: 25px;
-  background-color: #EDEFF2;
+  background-color: #F7F7F7;
 }
 
 .create_account {
@@ -512,4 +511,26 @@ table tr{
   margin-left: 50px;
   padding-left: 10px;
 
+}
+
+.delete {
+  margin-top: 10px;
+}
+
+a.delete {
+  color: #dd3b2a;
+}
+
+.intro {
+  font-size: 30px;
+
+}
+
+.intro-2 {
+  font-size: 20px;
+
+}
+
+.item {
+  font-size: 15px;
 }
