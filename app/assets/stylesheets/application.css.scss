@@ -400,21 +400,26 @@ footer {
 }
 
 .greeting {
+  width: 90%;
   margin-bottom: 20px;
-  margin-left: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
 }
 
 .greeting h3 {
-  margin-left: 100px;
+  margin-left: 0px;
   margin-bottom: 0px;
   color: #dd3b2a;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .logout-link a {
   color: #00374F;
   float: right;
-  margin-right: 75px;
+  margin-right: 55px;
+  padding-top: 10px;
+
 }
 
 .my-account a {
@@ -422,6 +427,7 @@ footer {
   float: right;
   margin-right: 20px;
   padding-right: 20px;
+  padding-top: 10px;
   border-right: 1px solid #00374F;
 }
 
@@ -470,7 +476,7 @@ table td a {
 }
 
 table td a:hover {
-  color: #dd3b2a;
+  color: #990000;
 }
 
 table tr{
