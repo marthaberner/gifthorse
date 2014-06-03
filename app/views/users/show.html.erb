@@ -2,14 +2,19 @@
 
 <div class="user-page-container">
   <div class="list-gifts-container">
-      <% @bookmarks.each do |bookmark| %>
-      <table width="800">
+    <% @bookmarks.each do |bookmark| %>
+      <table width="900">
         <tbody>
         <tr>
-          <td><h3><%= bookmark.title %></h3></td>
-          <td><a href="<%= bookmark.url %>" target="_blank"><%= bookmark.url %></a></td>
+          <td><h3 class="item"><%= bookmark.title %></h3></td>
+          <td><a href="<%= bookmark.url %>" target="_blank"><%= bookmark.url %></a>
+          <div class="delete">
+            <%= link_to "Delete", bookmark_path(bookmark.id), method: :delete, class: "delete" %>
+            </div>
+          </td>
         </tr>
         </tbody>
       </table>
-      <% end %>
+    <% end %>
+  </div>
 </div>
