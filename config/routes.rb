@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get '/api/bookmarks', to: 'bookmarks#create'
 
   get '/js/bookmark.js', to: 'bookmarks#js'
+
+  get '/about', to: 'welcome#about'
 end
