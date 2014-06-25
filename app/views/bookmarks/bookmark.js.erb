@@ -1,6 +1,6 @@
 (function () {
 
-  var result = window.confirm('Do you want to add this page to your GiftHorse account?');
+  var result = window.confirm('Do you want to add this item to your GiftHorse account?');
 
   if (result) {
     document.location = 'http://<%= request.host_with_port %>/api/bookmarks?title=' + document.title + "&url=" + location.href;
