@@ -1,21 +1,27 @@
-<div class="greeting"><h3>Hello, <%= @user.email %></h3></div>
+<div class="greeting">
+  <h3>Hello, <%= @user.email %></h3>
+  </div>
 
 <div class="user-page-container">
   <div class="list-gifts-container">
     <h3>My Items</h3>
     <% @bookmarks.each do |bookmark| %>
-      <table width="900">
-        <tbody>
-        <tr>
-          <td><h3 class="item"><%= bookmark.title %></h3></td>
-          <td><a href="<%= bookmark.url %>" target="_blank"><%= bookmark.url %></a>
-          <div class="delete">
-            <%= link_to "Delete", bookmark_path(bookmark.id), method: :delete, class: "delete" %>
-            </div>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+      <% if bookmark_belongs_to_user?(bookmark) %>
+        <table width="900">
+          <tbody>
+          <tr>
+            <td><h3 class="item"><%= bookmark.title %></h3></td>
+            <td><a href="<%= bookmark.url %>" target="_blank"><%= bookmark.url %></a>
+
+              <div class="delete">
+                <%= link_to "Delete", bookmark_path(bookmark.id), method: :delete, class: "delete" %>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      <% end %>
     <% end %>
   </div>
 </div>
+
