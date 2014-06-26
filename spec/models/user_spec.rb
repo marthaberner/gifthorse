@@ -9,14 +9,6 @@ describe User do
     expect(user.valid?).to eq false
   end
 
-  it 'Email cannot be blank' do
-    user = User.new(
-      email: '',
-      password: 'password1'
-    )
-    expect(user.valid?).to eq false
-  end
-
   it 'Password must be valid' do
     user = User.new(
       email: 'user1@example.com',
