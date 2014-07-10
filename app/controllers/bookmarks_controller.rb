@@ -1,13 +1,16 @@
 class BookmarksController < ApplicationController
 
   def create
-    @bookmark = Bookmark.create!(
+    @bookmark = Bookmark.new(
       title: params[:title],
       url: params[:url],
       user_id: session[:id]
     )
-
-    redirect_to params[:url]
+    if @bookmark.save
+      redirect_to params[:url]
+    else
+      redirect_to root_url
+    end
   end
 
   def destroy
