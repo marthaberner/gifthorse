@@ -193,11 +193,6 @@ footer {
   margin-left: 25px;
 }
 
-.list-gifts-container h3 {
-  padding-bottom: 20px;
-  margin-bottom: 0px;
-}
-
 .container-home {
   margin-right: auto;
   margin-left: auto;
@@ -475,7 +470,7 @@ table td a {
 }
 
 table td a:hover {
-  color: #990000;
+  color: #dd3b2a;
 }
 
 table tr{
@@ -484,7 +479,7 @@ table tr{
   float: left;
   padding: 10px;
   margin-bottom: 10px;
-  border-bottom: 1px solid #00374F;
+  border-bottom: 1px dotted #00374F;
 }
 
 .back-link a {
