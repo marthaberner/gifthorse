@@ -1,20 +1,33 @@
-def create_user
-  user = User.create!(
-    email: 'user@user.com',
-    password: 'password1',
-    password_confirmation: 'password1',
-  )
-
-  user.save
+def create_user(attributes={})
+  user = new_user(attributes)
+  user.save!
   user
 end
 
-def create_bookmark(user_id)
- bookmark = Bookmark.create!(
-   url: 'http://www.url.com',
-   user_id: user_id
-  )
+def new_user(attributes={})
+  defaults = {
+    email: 'user@user.com',
+    password: 'password1',
+    password_confirmation: 'password1',
+  }
 
-  bookmark.save
+  User.new(defaults.merge(attributes))
+end
+
+def create_bookmark(user_id, attributes={})
+  bookmark = new_bookmark(user_id, attributes)
+  bookmark.save!
+  bookmark.update(short_url: "localhost:3000/#{bookmark.id}")
   bookmark
+end
+
+def new_bookmark(user_id, attributes = {})
+  defaults = {
+    user_id: user_id,
+    url: 'http://www.url.com',
+    title: 'Some Awesome Thing',
+    short_url: nil
+  }
+
+  Bookmark.new(defaults.merge(attributes))
 end
