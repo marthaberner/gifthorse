@@ -24,6 +24,8 @@ class BookmarksController < ApplicationController
   def js
     render 'bookmark.js'
   end
+  
+private
 
   def is_session?
     if session[:id].present? && User.find(session[:id])
