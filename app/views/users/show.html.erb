@@ -10,7 +10,7 @@
         <table width="900">
           <tbody>
           <tr>
-            <td><h3 class="item"><%= bookmark.title %></h3>
+            <td><h3 class="item"><%= bookmark.title[0..35] + " ..." %></h3>
             <a href="<%= bookmark.url %>" target="_blank"><%= bookmark.short_url %></a>
 
               <div class="delete">
