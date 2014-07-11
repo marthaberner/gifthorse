@@ -4,9 +4,10 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(
       title: params[:title],
       url: params[:url],
-      user_id: session[:id]
+      user_id: session[:id],
     )
     if @bookmark.save
+      @bookmark.update(short_url: "#{request.host_with_port}/#{@bookmark.id}")
       redirect_to params[:url]
     else
       redirect_to root_url
@@ -24,8 +25,8 @@ class BookmarksController < ApplicationController
   def js
     render 'bookmark.js'
   end
-  
-private
+
+  private
 
   def is_session?
     if session[:id].present? && User.find(session[:id])

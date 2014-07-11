@@ -10,8 +10,8 @@
         <table width="900">
           <tbody>
           <tr>
-            <td><h3 class="item"><%= bookmark.title %></h3></td>
-            <td><a href="<%= bookmark.url %>" target="_blank"><%= bookmark.url %></a>
+            <td><h3 class="item"><%= bookmark.title %></h3>
+            <a href="<%= bookmark.url %>" target="_blank"><%= bookmark.short_url %></a>
 
               <div class="delete">
                 <%= link_to "Delete", bookmark_path(bookmark.id), method: :delete, class: "delete" %>
