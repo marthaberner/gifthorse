@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   get '/js/bookmark.js', to: 'bookmarks#js'
 
   get '/about', to: 'welcome#about'
+
+  get '/friends', to: 'friends#index'
 end

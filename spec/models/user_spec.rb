@@ -2,54 +2,31 @@ require 'spec_helper'
 
 describe User do
   it 'Email must be valid' do
-    user = User.new(
-      email: 'user1@example,com',
-      password: 'password1'
-    )
+    user = new_user(email: 'user1@example,com')
     expect(user.valid?).to eq false
   end
 
   it 'Password must be valid' do
-    user = User.new(
-      email: 'user1@example.com',
-      password: 'password'
-    )
+    user = new_user(password: 'password')
     expect(user.valid?).to eq false
-  end
-
-  it 'Accepts password that starts with a number' do
-    user = User.new(
-      email: 'user1@example.com',
-      password: '1password',
-      password_confirmation: '1password'
-    )
-    expect(user.valid?).to eq true
   end
 
   it 'Password must be between 6 and 9 characters and have one number' do
-    user = User.new(
-      email: 'user1@example.com',
-      password: '1pass',
-      password_confirmation: '1pass'
+    user = new_user(password: 'pass1')
+    expect(user.valid?).to eq false
+  end
+
+  it 'Requires a password confirmation' do
+    user = new_user(
+      password: '1password',
+      password_confirmation: '',
     )
     expect(user.valid?).to eq false
   end
 
-  it 'Creates user with password confirmation' do
-    user = User.new(
-      email: 'user1@example.com',
-      password: '1password',
-      password_confirmation: '1password',
-    )
-    expect(user.valid?).to eq true
-  end
+  it 'Requires a first and last name' do
+    user = new_user(first_name: nil, last_name: nil)
 
-  it 'Requires a password confirmation' do
-    user = User.new(
-      email: 'user1@example.com',
-      password: '1password',
-      password_confirmation: '',
-    )
     expect(user.valid?).to eq false
   end
 end

@@ -38,7 +38,7 @@ body {
   max-width: 1040px;
   margin-left: auto;
   margin-right: auto;
-  background-image: url('http://marthaberner.com/wp-content/uploads/2014/05/horses.jpg');
+  //  background-image: url('http://marthaberner.com/wp-content/uploads/2014/05/horses.jpg');
 }
 
 h1 {
@@ -139,10 +139,11 @@ footer {
   padding-bottom: 30px;
   padding-left: 50px;
   color: #00374F;
+  float: left;
 }
 
 .page-container {
-  background-color: #FFFFFF;
+  background-color: #FFFFF F;
   border-radius: 55px;
   overflow: hidden;
 }
@@ -161,7 +162,6 @@ footer {
   border: 2px solid #CC3300;
   border-radius: 25px;
   -moz-border-radius: 15px;
-  background-color: #EDEFF2;
 }
 
 .user-page-container {
@@ -398,7 +398,7 @@ footer {
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 50px;
+  padding-left: 5px;
 }
 
 .greeting h3 {
@@ -411,9 +411,14 @@ footer {
 .logout-link a {
   color: #00374F;
   float: right;
-  margin-right: 55px;
+  margin-right: 25px;
   padding-top: 10px;
 
+}
+
+.logout-link#find-friends a {
+  padding-right: 20px;
+  border-right: 1px solid #00374F;
 }
 
 .my-account a {
@@ -473,7 +478,7 @@ table td a:hover {
   color: #dd3b2a;
 }
 
-table tr{
+table tr {
   width: 800px;
   color: #dd3b2a;
   float: left;
@@ -532,4 +537,29 @@ a.delete {
 
 .handles {
   color: #00374F;
+}
+
+.list-users {
+  width: 90%;
+  float: left;
+  margin-left: 25px;
+  overflow: hidden;
+}
+
+.list-users li, h3 {
+  color: #00374F;
+}
+
+.find-friends-list {
+  margin-left: 5em;
+  margin-top: 5em;
+  overflow: hidden;
+}
+
+ul > li:nth-child(odd) {
+  background-color: #eee;
+}
+
+ul > li:nth-child(even) {
+  background-color: #fff;
 }

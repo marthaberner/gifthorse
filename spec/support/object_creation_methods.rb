@@ -6,6 +6,8 @@ end
 
 def new_user(attributes={})
   defaults = {
+    first_name: 'User',
+    last_name: 'Name',
     email: 'user@user.com',
     password: 'password1',
     password_confirmation: 'password1',
@@ -30,4 +32,13 @@ def new_bookmark(user_id, attributes = {})
   }
 
   Bookmark.new(defaults.merge(attributes))
+end
+
+def login(user)
+  visit root_path
+  within(".login-home") do
+    fill_in "Email", with: user.email
+    fill_in "Password", with: 'password1'
+    click_on "Login"
+  end
 end

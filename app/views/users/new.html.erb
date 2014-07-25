@@ -4,6 +4,16 @@
     <%= form_for @user do |f| %>
 
       <p>
+        <%= f.label :first_name, class: "form-label" %>
+        <%= f.text_field :first_name %>
+      </p>
+
+      <p>
+        <%= f.label :last_name, class: "form-label" %>
+        <%= f.text_field :last_name %>
+      </p>
+
+      <p>
         <%= f.label :email, class: "form-label" %>
         <%= f.text_field :email, autofocus: true %>
       </p>
@@ -23,7 +33,7 @@
       </p>
     <% end %>
   </div>
-  <div class="errors" >
+  <div class="errors">
     <% if @user.errors.any? %>
       <ul>
         <% @user.errors.full_messages.each do |message| %>

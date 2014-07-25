@@ -9,4 +9,7 @@ class User < ActiveRecord::Base
 
   validates :password,
             format: {with: /\A^(?=.*\d)(?=.*[a-zA-Z]).{6,9}$\z/, message: " must be between 6 and 9 characters and have one number."}
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
