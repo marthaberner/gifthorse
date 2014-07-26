@@ -21,9 +21,6 @@ feature 'User Bookmarks' do
     expect(page).to have_content 'Hello, User'
     expect(page).to have_content 'Some Ver Long Dragging On Name That ...'
     expect(page).to have_no_content 'Some Other Awesome Thing'
-
-    # displayed url is shortened
-    expect(page).to have_content("localhost:3000/#{bookmark.id}")
   end
 end
 

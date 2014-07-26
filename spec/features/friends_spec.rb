@@ -9,6 +9,5 @@ feature 'Friendship' do
     expect(page).to have_content('Hello, User')
     click_link 'Find Friends'
     expect(page).to have_content('joe@joe.com')
-
   end
 end
