@@ -14,10 +14,24 @@ class ApplicationController < ActionController::Base
     bookmark.user_id == user.id
   end
 
+  def are_not_friends?(user)
+    friend_id = user.id
+    friendship = find_friendship(friend_id)
+    !friendship.present?
+    end
+
+  def find_friendship(friend_id)
+    Friendship.where(
+      "user_id = :user_id and friend_id = :friend_id OR user_id = :friend_id and friend_id = :user_id",
+      user_id: current_user.id,
+      friend_id: friend_id
+    ).first
+  end
+
   def current_user
     @current_user ||= User.find_by(id: session[:id])
   end
 
-  helper_method :logged_in?, :current_user, :bookmark_belongs_to_user?
+  helper_method :logged_in?, :current_user, :bookmark_belongs_to_user?, :are_not_friends?
 end
 

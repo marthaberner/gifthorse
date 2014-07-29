@@ -171,7 +171,7 @@ footer {
 .user-page-container {
   margin-right: auto;
   margin-left: auto;
-  margin-top: 5em;
+  margin-top: 2em;
   overflow: hidden;
   width: 98%;
   padding: 0em;
@@ -407,7 +407,7 @@ footer {
 }
 
 .greeting h3 {
-  margin-bottom: 0px;
+  margin-bottom: 2em;
   color: #dd3b2a;
   font-size: 30px;
 }
@@ -439,6 +439,11 @@ footer {
 
 .my-account a:hover {
   color: #00374F;
+}
+
+.links {
+  overflow: hidden;
+  margin: 0px;
 }
 
 .just-added {
@@ -516,8 +521,18 @@ table tr {
   text-align: left;
 }
 
-.notice-alert {
+.notice {
+  background-color: #A9F5BC;
+  border: 1px solid green;
+  width: 90%;
+  margin-left: 50px;
+  padding-left: 10px;
+
+}
+
+.alert {
   background-color: lightpink;
+  border: 1px solid red;
   width: 90%;
   margin-left: 50px;
   padding-left: 10px;
@@ -529,7 +544,6 @@ table tr {
 }
 
 a.delete {
-  color: #dd3b2a;
   margin-left: 5em;
 }
 
@@ -558,6 +572,19 @@ a.delete {
   overflow: hidden;
 }
 
+.list-users input {
+  margin-left: 100px;
+}
+
+.list-users ul li {
+  display: inline;
+}
+
+.list-users ul {
+  width: 40%;
+  padding: 0px;
+}
+
 .list-users li, h3 {
   color: #00374F;
 }
@@ -567,6 +594,19 @@ a.delete {
   float: left;
   margin-left: 25px;
   padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.find-friends-list h2 {
+  font-size: 1.5em;
+}
+
+.find-friends-list li {
+  font-family: 'Adelle W01 Bold', 'Arvo', Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  font-size: 1em;
+  font-weight: 800;
+  line-height: 1.25em;
+  margin: 0.5em 0;
 }
 
 ul > li:nth-child(odd) {
@@ -583,7 +623,27 @@ ul > li:nth-child(even) {
   border-radius: 35px;
 }
 
+.list-bookmarks ul {
+  width: 60%;
+}
+
+.list-bookmarks li {
+  overflow: hidden;
+}
+
+.list-bookmarks li a {
+  color: #dd3b2a;
+  font-weight: 600;
+}
+
 .list-bookmarks li a:hover {
+  color: #333366;
+}
+
+.list-bookmarks li a.delete {
+  color: #333366;
+}
+.list-bookmarks li a.delete:hover {
   color: #dd3b2a;
 }
 
@@ -593,4 +653,17 @@ ul > li:nth-child(even) {
 
 .empty-list a:hover {
   color: #333366;
+}
+
+.add-friend {
+  float: right;
+  font-size: .75em;
+  display: inline;
+  color: #00374F;
+  background-color: lightgray;
+  box-shadow: 1px 1px 1px black;
+}
+
+.add-friend:hover {
+  color: #dd3b2a;
 }

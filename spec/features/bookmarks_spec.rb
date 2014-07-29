@@ -2,12 +2,12 @@ require 'spec_helper'
 
 feature 'User Bookmarks' do
   scenario 'Only a user\'s bookmarks display in their account' do
-    user = create_user(email: 'sue@sue.com')
+    user1 = create_user(email: 'sue@sue.com')
     user2 = create_user(email: 'joe@joe.com')
     create_bookmark(user2.id, title: 'Some Other Awesome Thing')
-    bookmark = create_bookmark(user.id,
-                               title: 'Some Ver Long Dragging On Name That Goes On Forever Awesome Thing',
-                               url: 'http://www.someverylongstupidurlwithlotsof12345.com')
+    create_bookmark(user1.id,
+                    title: 'Some Very Long Dragging On Name That Goes On Forever Awesome Thing',
+                    url: 'http://www.someverylongstupidurlwithlotsof12345.com')
 
     visit '/'
 
@@ -19,7 +19,7 @@ feature 'User Bookmarks' do
 
     # displayed title is shortened
     expect(page).to have_content 'Hello, User'
-    expect(page).to have_content 'Some Ver Long Dragging On Name That ...'
+    expect(page).to have_content 'Some Very Long Dragging On Name That Goes On F ...'
     expect(page).to have_no_content 'Some Other Awesome Thing'
   end
 end

@@ -3,15 +3,17 @@ Rails.application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root 'welcome#index'
 
-  resources :users
+  resources :users do
+    resources :friendships
+  end
 
   resources :bookmarks
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  match '/login',  to: 'sessions#new',         via: 'get'
+  match '/login', to: 'sessions#new', via: 'get'
 
-  match '/logout', to: 'sessions#destroy',     via: 'delete'
+  match '/logout', to: 'sessions#destroy', via: 'delete'
 
   get '/api/bookmarks', to: 'bookmarks#create'
 
@@ -19,5 +21,4 @@ Rails.application.routes.draw do
 
   get '/about', to: 'welcome#about'
 
-  get '/friends', to: 'friends#index'
 end
