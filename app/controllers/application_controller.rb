@@ -18,11 +18,10 @@ class ApplicationController < ActionController::Base
     friend_id = user.id
     friendship = find_friendship(friend_id)
     !friendship.present?
-    end
+  end
 
   def find_friendship(friend_id)
     Friendship.where(
-      "user_id = :user_id and friend_id = :friend_id OR user_id = :friend_id and friend_id = :user_id",
       user_id: current_user.id,
       friend_id: friend_id
     ).first
