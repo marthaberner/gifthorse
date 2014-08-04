@@ -183,6 +183,11 @@ footer {
   min-height: 20em;
 }
 
+.user-page-container h3 {
+  padding-left: 2em;
+  padding-top: 2em;
+}
+
 .add-gifts-container {
   width: 45%;
   float: right;
@@ -197,6 +202,7 @@ footer {
   float: left;
   margin-left: 25px;
   padding-top: 2em;
+  padding-left: 2em;
 }
 
 .container-home {
@@ -666,4 +672,9 @@ ul > li:nth-child(even) {
 
 .add-friend:hover {
   color: #dd3b2a;
+}
+
+.empty-list {
+  padding-left: 2em;
+  padding-top: 2em;
 }
