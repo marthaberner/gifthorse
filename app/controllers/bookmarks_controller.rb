@@ -22,6 +22,11 @@ class BookmarksController < ApplicationController
     redirect_to user_path(@user.id)
   end
 
+  def show
+    @user = User.find_by(id: params[:user_id])
+    @friend_list = Bookmark.where(user_id: params[:user_id])
+  end
+
   def js
     render 'bookmark.js'
   end

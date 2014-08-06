@@ -1,2 +1,2 @@
-<div class="user"><%= user.first_name %>
-<%= user.last_name %></div>
+<div class="user">
+<%= link_to "#{user.first_name} #{user.last_name}", friend_bookmarks_path(user) %></div>

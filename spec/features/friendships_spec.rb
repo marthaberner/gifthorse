@@ -27,12 +27,16 @@ feature 'Friendships' do
     expect(page).to have_content('Friendship Confirmed')
     expect(page).to have_no_content('Sue Summer')
 
-    #user can view current friends on account page, not pending
+    #user can view only confirmed friends on account page
     Friendship.create(user_id: joe.id, friend_id: bob.id, confirmed: true, pending: false)
     Friendship.create(user_id: joe.id, friend_id: zak.id, confirmed: false, pending: true)
     click_link 'My Account'
     expect(page).to have_content('Sue Summer')
     expect(page).to have_content('Bob Rob')
     expect(page).to have_no_content('Zak Attack')
+
+    #suer can view their friend's lists
+    click_link('Sue Summer')
+    expect(page).to have_content("Sue's List")
   end
 end

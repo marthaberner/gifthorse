@@ -1,0 +1,8 @@
+<div class="user-page-container">
+  <h2><%= "#{@user.first_name}'s List" %></h2>
+  <% @friend_list.each do |bookmark| %>
+    <div class="list-gifts-container">
+      <div class="others-bookmarks"><h4><%= truncate bookmark.title, length: 65, separator: ' ' %></h4>
+      <a href="<%= bookmark.url %>" target="_blank"><%= bookmark.short_url %></a></div>
+    </div>
+<% end %></div>

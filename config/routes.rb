@@ -25,6 +25,6 @@ Rails.application.routes.draw do
 
   put 'friendships/:id', to: 'friendships#update', as: :update_friendship
 
-  get 'welcome/intro_test.html', to: 'welcome#intro'
+  get 'users/friend_bookmarks/:user_id', to: 'bookmarks#show', as: :friend_bookmarks
 
 end
