@@ -36,9 +36,8 @@ end
 
 def login(user)
   visit root_path
-  within(".login-home") do
+  click_link "Login"
     fill_in "Email", with: user.email
     fill_in "Password", with: 'password1'
     click_on "Login"
-  end
 end

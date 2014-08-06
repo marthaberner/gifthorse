@@ -22,13 +22,16 @@
         <%= flash[:alert] %>
       </div>
     <% end %>
-      <% if logged_in? %>
-        <div class="greeting">
-          <li class="logout-link"><%= link_to 'Logout', logout_path, method: :delete %></li>
-          <li class="logout-link" id="find-friends"><%= link_to 'Find Friends', new_user_friendship_path(current_user) %></li>
-          <li class="my-account"><%= link_to 'My Account', user_path(session[:id]) %></li>
-        </div>
-      <% end %>
+    <% if logged_in? %>
+      <div class="greeting">
+        <li class="logout-link"><%= link_to 'Logout', logout_path, method: :delete %></li>
+        <li class="logout-link" id="find-friends"><%= link_to 'Find Friends', new_user_friendship_path(current_user) %></li>
+        <% if friend_requests? %>
+         <li class="logout-link" id="requests"> <%= link_to "Friend Requests", pending_friendships_path(current_user) %></li>
+        <% end %>
+        <li class="my-account"><%= link_to 'My Account', user_path(session[:id]) %></li>
+      </div>
+    <% end %>
     <%= yield %>
   </main>
   <footer>&copy; <%= link_to "martha berner", about_path %> | all rights reserved</footer>

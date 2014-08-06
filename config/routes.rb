@@ -21,4 +21,10 @@ Rails.application.routes.draw do
 
   get '/about', to: 'welcome#about'
 
+  get 'users/:user_id/friendships', to: 'friendships#show', as: :pending_friendships
+
+  put 'friendships/:id', to: 'friendships#update', as: :update_friendship
+
+  get 'welcome/intro_test.html', to: 'welcome#intro'
+
 end

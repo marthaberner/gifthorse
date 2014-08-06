@@ -7,83 +7,14 @@
     <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://<%= request.host_with_port %>/js/bookmark.js';})();">GiftHorse</a>
     bookmark to your browser's toolbar.</p>
 
+  <p class="intro">Makes sharing with friends and family a breeze.</p>
+
   <p class="intro-2">The next time you're browsing the web and see something you like just click the bookmark and the
     item will be
     saved to your GiftHorse account.</p>
 </div>
-
 <div class="half">
-  <div class="login-home">
-    <h3>Login</h3>
-    <% if @user.errors.present? %>
-      <div class="errors">
-        <ul class="error-list">
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <%= form_for :session, url: sessions_path do |f| %>
-      <p>
-        <%= f.label :email, class: "form-label" %>
-        <%= f.text_field :email %>
-      </p>
-
-      <p>
-        <%= f.label :password, class: "form-label" %>
-        <%= f.password_field :password %>
-      </p>
-
-      <p>
-        <%= f.submit "Login", class: "login-button-too" %>
-      </p>
-    <% end %>
-  </div>
-
-  <div class="create-home">
-    <h3>Create An Account</h3>
-
-    <%= form_for @user do |f| %>
-
-      <% if @user.errors.present? %>
-        <div class="errors">
-          <ul class="error-list">
-            <% @user.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <p>
-        <%= f.label :first_name, class: "form-label" %>
-        <%= f.text_field :first_name %>
-      </p>
-
-      <p>
-        <%= f.label :last_name, class: "form-label" %>
-        <%= f.text_field :last_name %>
-      </p>
-
-      <p>
-        <%= f.label :email, class: "form-label" %>
-        <%= f.text_field :email %>
-      </p>
-
-      <p>
-        <%= f.label :password, class: "form-label" %>
-        <%= f.password_field :password %>
-      </p>
-
-      <p>
-        <%= f.label :password_confirmation, class: "form-label" %>
-        <%= f.password_field :password_confirmation %>
-      </p>
-
-      <p>
-        <%= f.submit "Create Account", class: "create-button" %>
-      </p>
-    <% end %>
-  </div>
+  <h2><%= link_to "Login", login_path %></h2>
+  <h3>or</h3>
+  <h2><%= link_to "Create An Account", new_user_path %></h2>
 </div>

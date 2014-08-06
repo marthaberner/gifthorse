@@ -9,9 +9,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def bookmark_belongs_to_user?(bookmark)
-    user = User.find(session[:id])
-    bookmark.user_id == user.id
+  def friend_requests?
+    Friendship.where(
+      friend_id: current_user.id,
+      pending: true
+    )
   end
 
   def are_not_friends?(user)
@@ -31,6 +33,6 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: session[:id])
   end
 
-  helper_method :logged_in?, :current_user, :bookmark_belongs_to_user?, :are_not_friends?
+  helper_method :logged_in?, :current_user, :are_not_friends?, :friend_requests?
 end
 

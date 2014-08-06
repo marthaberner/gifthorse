@@ -1,0 +1,5 @@
+<div class="friend-requests">
+  <%= friendship.user.first_name %>
+  <%= friendship.user.last_name %>
+  <%= link_to "Confirm Friendship", update_friendship_path(friendship), method: :put %>
+</div>

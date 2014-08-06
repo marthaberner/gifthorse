@@ -1,5 +1,5 @@
 <div class="list-gifts-container">
-  <h4><%= bookmark.title[0..45] + " ..." %></h4>
+  <h4><%= truncate bookmark.title, length: 65, separator: ' ' %>
+    <span class="delete"><%= link_to "Delete", bookmark_path(bookmark.id), method: :delete, class: "delete" %></span></h4>
   <a href="<%= bookmark.url %>" target="_blank"><%= bookmark.short_url %></a>
-  <%= link_to "Delete", bookmark_path(bookmark.id), method: :delete, class: "delete" %>
 </div>

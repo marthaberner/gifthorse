@@ -11,15 +11,14 @@ feature 'User Bookmarks' do
 
     visit '/'
 
-    within('.login-home') do
+    click_link "Login"
       fill_in 'Email', with: 'sue@sue.com'
       fill_in 'Password', with: 'password1'
       click_on 'Login'
-    end
 
     # displayed title is shortened
     expect(page).to have_content 'Hello, User'
-    expect(page).to have_content 'Some Very Long Dragging On Name That Goes On F ...'
+    expect(page).to have_content 'Some Very Long Dragging On Name That Goes On Forever Awesome...'
     expect(page).to have_no_content 'Some Other Awesome Thing'
   end
 end
