@@ -10,10 +10,12 @@
       <p>Your GiftHorse list is empty.<br><br> To add items to your list, drag this
         <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://<%= request.host_with_port %>/js/bookmark.js';})();">GiftHorse</a>
         bookmark to your browser.<br><br>
-        Then simply browse the web and click the bookmark to add cool things here.</p>
+        Then simply browse the web and click the bookmark to add cool things to your list.</p>
     </div>
   <% end %>
-  <h3>My Friends</h3>
-  <%= render @my_friends %>
+  <% if @my_friends.present? %>
+    <h3>My Friends</h3>
+    <%= render @my_friends %>
+  <% end %>
 </div>
 

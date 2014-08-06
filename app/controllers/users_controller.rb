@@ -16,7 +16,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @my_friends = Friendship.where(friend_id: current_user.id).map(&:user)
+    @my_friends = Friendship.where(friend_id: current_user.id, confirmed: true).map(&:user)
+    @my_friends += Friendship.where(user_id: current_user.id, confirmed: true).map(&:friend)
     @my_bookmarks = current_user.bookmarks
     @user = User.find(params[:id])
     session[:id] = @user.id
