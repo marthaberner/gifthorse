@@ -26,5 +26,8 @@ feature 'Friendships' do
     expect(page).to have_content('Friendship Confirmed')
     expect(page).to have_no_content('Sue Summer')
 
+    #user can view current friends on account page
+    click_link 'My Account'
+    expect(page).to have_content('Sue Summer')
   end
 end
